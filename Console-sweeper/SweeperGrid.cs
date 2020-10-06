@@ -18,7 +18,7 @@ namespace Console_sweeper
                 }
             }
 
-            for (int i = 10; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 int bombPlaceX = generator.Next(1,grid.GetLength(0));
                 int bombPlaceY = generator.Next(1,grid.GetLength(1));
@@ -33,12 +33,38 @@ namespace Console_sweeper
             {
                 return false;
             }
+            else if (y < 0 || y > grid.GetLength(1))
+            {
+                return false;
+            }
             
             return grid[x, y] == 10;
 
         }
 
+        
 
+        public void Draw()
+        {
+            string bomb = "X";
+            string empty = "█";
+
+            for (int xDraw = 0; xDraw < grid.GetLength(0); xDraw++)
+            {
+                for (int yDraw = 0; yDraw < grid.GetLength(1); yDraw++)
+                {
+                    if (grid[xDraw, yDraw] == 10)
+                    {
+                        Console.Write(bomb);
+                    }
+                    else
+                    {
+                        Console.Write(empty);
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
 
     }
 }

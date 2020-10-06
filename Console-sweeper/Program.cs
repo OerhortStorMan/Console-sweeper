@@ -7,21 +7,30 @@ namespace Console_sweeper
         static void Main(string[] args)
         {
             SweeperGrid gameGrid = new SweeperGrid();
+System.Console.WriteLine("Grid:et är 12 x 15");
+            gameGrid.Draw();
 
-            // Console.Write(gameGrid);
-            System.Console.WriteLine("Skriv två positioner som x,y");
+            bool game = true;
+            while (game)
+            {
+            System.Console.WriteLine("Skriv en Y pos");
             string xInput = Console.ReadLine();
-            
+// Y POS OCH X POS BLANDAS IHOP
             int.TryParse(xInput, out int xInputInt);
 
-            System.Console.WriteLine("Skeiv en Y pos");
+            System.Console.WriteLine("Skriv en X pos");
             string yInput = Console.ReadLine();
 
             int.TryParse(yInput, out int yInputInt);
 
             Console.WriteLine(gameGrid.CheckPosition(xInputInt, yInputInt));
 
-            Console.ReadLine();
+            if (true)
+            {
+                
+            }
+
+            }
         }
     }
 }
