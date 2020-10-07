@@ -38,6 +38,7 @@ namespace Console_sweeper
                 return false;
             }
             
+            
             return grid[x, y] == 10;
 
         }
